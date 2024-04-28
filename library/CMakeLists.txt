@@ -1,7 +1,13 @@
 
 add_definitions(-DRC_AUTOPILOT_EXT)
-
-include_directories(/usr/include)
+set(CMAKE_SYSTEM_PROCESSOR arm)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE SHARED_LIBRARY)
+set(CMAKE_CROSSCOMPILING 1)
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_C_COMPILER arm-linux-gnueabihf-gcc)
+set(CMAKE_LINKER arm-linux-gnueabihf-ld) 
 
 add_compile_options(
 	-Wno-cast-align
